@@ -62,9 +62,9 @@ public class FrontEndGTerm {
 		
 		// The first thing the user will see. A friendly welcome pop up, giving the user the options of loading from 
 		// previously saved file or to enter the amount of applications they want processed. 
-		String input = this.gt.getInputString("                                                            "
-				+ "Welcome ( Í¡Â° ÍœÊ– Í¡Â°)"
-				+ "\n\nIf you would like to load previously saved applications select 'Cancel' then select 'Load'"
+		String input = this.gt.getInputString("                                                                  "
+				+ "Welcome"
+				+ "\n\nIf you would like to load a previously saved application select 'Cancel' then select 'Load'"
 				+ "\n\nIf this is your first time please type the number of applications you would like to apply for:"
 				+ "\n ");
 
@@ -80,7 +80,7 @@ public class FrontEndGTerm {
 		}
 	}
 
-//Loads saved applications details from file.
+	// Loads saved applications details from file of users choosing.
 	public void loadContestant() {
 
 		String[] arrayOfStrings = this.backEnd.loadFile(this.gt.getFilePath());
@@ -102,10 +102,11 @@ public class FrontEndGTerm {
 		}
 
 		if (this.backEnd.saveFile(arrayofStrings, "./SavedApplcations.txt")) {
-			this.gt.showMessageDialog("Applications Saved Successfuly ( Í¡Â° ÍœÊ– Í¡Â°)"
+			this.gt.showMessageDialog("Application Saved Successfuly"
 					+ "\nWhen returning select the 'Load' button to retrieve your saved applications.");
 		} else
-			this.gt.showMessageDialog("File failed to save, please try again");
+			this.gt.showMessageDialog("File failed to save! "
+					+ "\nPlease make sure the file is not is use by another program.");
 	}
 
 	// GTerm button method for removing a record. Calls and sends data to the
