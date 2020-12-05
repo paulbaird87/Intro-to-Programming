@@ -40,8 +40,7 @@ public class BackEnd {
 	}
 
 	// This is a get method for the maxRecords variable. This sets the maximum
-	// number
-	// of entries the user can enter.
+	// number of entries the user can enter.
 	public int getMaxRecords() {
 		return this.maxRecords;
 	}
@@ -63,8 +62,7 @@ public class BackEnd {
 	}
 
 	// This is a get method for expanding the number of records in the table. Also
-	// changes
-	// the length of the Record[] array.
+	// changes the length of the Record[] array.
 	public void expandRecords(int numRecords) {
 
 		Registration[] records = new Registration[this.registrations.length + numRecords];
@@ -114,8 +112,8 @@ public class BackEnd {
 
 	}
 
-	// Allows to update registration information.
-	public void updateContestant(String[] arrayOfStrings) {
+	// Updates the registration array details and counts.
+	public void updateRegistrations(String[] arrayOfStrings) {
 		this.registrations = new Registration[arrayOfStrings.length];
 		this.maxRecords = arrayOfStrings.length;
 		this.currentRecord = 0;
@@ -130,7 +128,7 @@ public class BackEnd {
 
 	}
 
-	// Allows to load file from .data.
+	// This loads the the user chosen data file.
 	public String[] loadFile(String filePath) {
 
 		String fileText = "";
@@ -154,7 +152,7 @@ public class BackEnd {
 		return fileText.split("\\|");
 	}
 
-	// Translates details from .data to table.
+	// This parses the data from the chosen load file to the table.
 	public Registration parseApplications(String data) {
 
 		String[] parsedData = data.split(",");
@@ -164,11 +162,7 @@ public class BackEnd {
 
 	}
 
-	public void saveDetails() {
-
-	}
-
-	// Allows to save details to .data.
+	// This save the user input data to root directory SavedApplcations.txt
 	public Boolean saveFile(String[] arrayOfStrings, String filePath) {
 		boolean fileSaved = false;
 
@@ -188,7 +182,7 @@ public class BackEnd {
 		return fileSaved;
 	}
 
-	// Allows to update registrations details.
+	// This updates the Registration class arrays.
 	public void updateDetails(int index, Registration registrations) {
 		this.registrations[index] = registrations;
 	}
