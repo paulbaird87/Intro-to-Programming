@@ -81,14 +81,14 @@ public class FrontEndGTerm {
 	}
 
 	// Loads saved applications details from file of users choosing.
-	public void loadContestant() {
+	public void loadRegistrations() {
 
 		String[] arrayOfStrings = this.backEnd.loadFile(this.gt.getFilePath());
-		this.backEnd.updateContestant(arrayOfStrings);
+		this.backEnd.updateRegistrations(arrayOfStrings);
 		refreshTable();
 	}
 
-	public void saveContestant() {
+	public void saveRegistrations() {
 
 		String[] arrayofStrings = new String[this.backEnd.getRecordCount()];
 
